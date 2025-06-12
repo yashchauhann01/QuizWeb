@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interactive College Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" role="main" aria-label="Quiz application">
+    <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light theme">
+      <svg id="theme-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="5" />
+        <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </g>
+      </svg>
+    </button>
+
+    <section id="home-screen" aria-label="Welcome screen">
+      <h1>Welcome to the College Quiz</h1>
+      <label for="username">Enter your name</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Your full name"
+        aria-required="true"
+        autocomplete="off"
+      />
+      <button id="start-btn" disabled aria-disabled="true" aria-label="Start the quiz">
+        Start Quiz
+      </button>
+    </section>
+
+    <section id="quiz-screen" style="display:none;" aria-label="Quiz questions">
+      <div class="question-number" aria-live="polite"></div>
+      <div class="question-text"></div>
+      <div class="options" role="list"></div>
+      <div class="timer-bar-container" aria-label="Time remaining">
+        <div class="timer-bar"></div>
+      </div>
+
+      <div class="nav-buttons">
+        <button id="prev-btn" disabled aria-disabled="true" aria-label="Previous question">Previous</button>
+        <button id="submit-answer-btn" disabled aria-disabled="true" aria-label="Submit answer">Submit Answer</button>
+        <button id="next-btn" disabled aria-disabled="true" aria-label="Next question">Next</button>
+      </div>
+
+      <button id="submit-quiz-btn" disabled aria-disabled="true" aria-label="Submit quiz">Submit Quiz</button>
+    </section>
+
+    <section id="result-screen" style="display:none;" aria-label="Quiz result">
+      <h1>Quiz Completed</h1>
+      <p class="result"></p>
+      <button id="restart-btn" aria-label="Restart quiz">Restart Quiz</button>
+    </section>
+  </div>
+  
+  <footer>
+    <p class="footer-text">Made with ❤️ Ash</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
